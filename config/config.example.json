@@ -1,0 +1,6 @@
+{
+    "auth_token": "Your github auth token goes here",
+    "repo": "UserName/RepoName",
+    "time_zone": "Europe/Copenhagen",
+    "theme": "darkly"
+}
