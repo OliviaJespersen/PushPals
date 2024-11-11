@@ -6,6 +6,7 @@ class Controller:
     def __init__(self, model: Model, view: View):
         self.model = model
         self.view = view
+        self.old_messages = []
 
         self.view.bind_send_button(self.send_message)
         
@@ -19,4 +20,6 @@ class Controller:
 
     def update_view(self):
         messages = self.model.get_messages()
-        self.view.load_messages(messages)
+        if messages != self.old_messages:
+            self.old_messages = messages
+            self.view.load_messages(messages)
